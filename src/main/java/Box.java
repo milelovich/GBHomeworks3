@@ -40,8 +40,8 @@ public class Box<T extends Fruit> {
 //    f. Написать метод, который позволяет пересыпать фрукты из текущей коробки в другую коробку(помним про сортировку
 //    фруктов, нельзя яблоки высыпать в коробку с апельсинами), соответственно в текущей коробке фруктов не остается,
 //    а в другую перекидываются объекты, которые были в этой коробке;
-    public static <U extends Fruit> void transfer(Box<? extends U> box1, Box<? super U> box2) {
-        box2.fruits.addAll(box1.fruits);
-        box1.fruits.clear();
-    }
+public void transfer(Box<T> otherBox) {
+    otherBox.fruits.addAll(fruits);
+    fruits.clear();
+}
 }
